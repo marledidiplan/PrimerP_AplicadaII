@@ -47,23 +47,9 @@
                     <label for="Monto" class="col-md-3 control-label input-sm">Monto:</label>
                     <div class="col-md-8">
                         <asp:TextBox ID="MontoTextBox" runat="server" class="form-control input-sm"></asp:TextBox>
-                        <div>
-                            <asp:Button ID="AgregarButton" runat="server" Text="Agregar" class="btn btn-dark btn" />
-                        </div>
                         <br />
                     </div>
                 </div>
-                 <asp:GridView ID="DepositoGridView" runat="server" class="table table-condensed table-bordered table-responsive" AutoGenerateColumns="False" CellPadding="4" ForeColor="#0066FF" GridLines="None">
-                            <AlternatingRowStyle BackColor="#999999" />
-                            <Columns>
-                                <asp:BoundField DataField="DepositoId" HeaderText="DepositoId" />
-                                <asp:BoundField DataField="CuentaId" HeaderText="CuentaId" />
-                                <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
-                                <asp:BoundField DataField="Concepto" HeaderText="Concepto" />
-                                <asp:BoundField DataField="Monto" HeaderText="Monto" />
-                            </Columns>
-                            <HeaderStyle BackColor="#003366" Font-Bold="True" />
-                        </asp:GridView>
                 <div class="text-center">
                     <asp:Button ID="NuevoBtton" runat="server" Text="Nuevo" class="btn btn-warning btn" />
                     <asp:Button ID="GuardarBtton" runat="server" Text="Guardar" class="btn btn-success btn" />

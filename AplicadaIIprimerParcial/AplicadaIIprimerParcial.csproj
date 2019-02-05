@@ -73,8 +73,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Consulta\cCuentasBancarias.aspx" />
     <Content Include="content\toastr.css" />
     <Content Include="content\toastr.min.css" />
+    <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="content\toastr.scss" />
     <Content Include="content\toastr.less" />
@@ -91,6 +93,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consulta\cCuentasBancarias.aspx.cs">
+      <DependentUpon>cCuentasBancarias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consulta\cCuentasBancarias.aspx.designer.cs">
+      <DependentUpon>cCuentasBancarias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

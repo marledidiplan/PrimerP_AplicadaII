@@ -11,7 +11,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-info">
-        <a class="navbar-brand" href="#">Inicio</a>
+        <a class="navbar-brand" href="Default.aspx">Inicio</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
 
@@ -23,8 +23,8 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Registros
                             </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Registro Cuenta Bancaria</a>
-                        <a class="dropdown-item" href="#">Registro Deposito</a>
+                        <a class="dropdown-item" href="Registros\rCuentaBancaria.aspx">Registro Cuenta Bancaria</a>
+                        <a class="dropdown-item" href="Registros\rDeposito.aspx">Registro Deposito</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -38,6 +38,7 @@
                     <a class="nav-link" href="#">Ayuda <span class="sr-only">(current)</span></a>
                 </li>
                 <asp:Button ID="CerrarButton" class="btn btn-success my-1 my-sm-1" type="submit" runat="server" Text="Sign off" OnClick="CerrarButton_Click" />--%>
+                <li></li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <button class="btn btn-outline-light  my-2 my-sm-0" type="submit">Sign off</button>
@@ -49,6 +50,8 @@
     <form id="form1" runat="server">
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                <p>
+                </p>
             </asp:ContentPlaceHolder>
         </div>
     </form>

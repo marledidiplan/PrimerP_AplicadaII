@@ -19,14 +19,14 @@ namespace Entidades
 
         public CuentasBancarias()
         {
+            CuentaId = 0;
+            Fecha = DateTime.Now;
+            Nombre = string.Empty;
             Balance = 0;
-            this.Detalle = new List<Depositos>();
+            
         }
 
-        public void Agregar(int depositoId, int cuentaId, DateTime fecha, string concepto, decimal monto)
-        {
-            this.Detalle.Add(new Depositos(depositoId, cuentaId, fecha, concepto, monto ));
-        }
+     
         
     }
 }

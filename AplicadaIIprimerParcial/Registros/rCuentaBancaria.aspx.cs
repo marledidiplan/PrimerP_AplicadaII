@@ -21,7 +21,7 @@ namespace AplicadaIIprimerParcial.Registros
         {
             CuentaIdTextBox.Text = "0";
             FechaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
-            NombreTextbox.Text = "0";
+            NombreTextbox.Text = "";
             BalanceTextBox.Text = "0";
         }
 

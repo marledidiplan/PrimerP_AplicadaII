@@ -49,8 +49,8 @@ namespace AplicadaIIprimerParcial.Registros
         }
         protected void Grid()
         {
-            DepositoGridView.DataSource = ((Depositos)ViewState["Deposito"]).CuentasB.Detalle;
-            DepositoGridView.DataBind();
+            //DepositoGridView.DataSource = ((Depositos)ViewState["Deposito"]).CuentasB.Detalle;
+            //DepositoGridView.DataBind();
         }
 
 
