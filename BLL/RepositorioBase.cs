@@ -83,7 +83,6 @@ namespace BLL
             try
             {
                 Lista = _contexto.Set<T>().Where(expression).ToList();
-                _contexto.Dispose();
             }
             catch (Exception)
             {

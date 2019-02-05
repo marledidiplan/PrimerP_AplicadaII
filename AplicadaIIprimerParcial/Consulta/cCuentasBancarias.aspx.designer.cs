@@ -31,15 +31,6 @@ namespace AplicadaIIprimerParcial.Consulta {
         protected global::System.Web.UI.WebControls.DropDownList FiltroDropDownList;
         
         /// <summary>
-        /// Criterio control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Criterio;
-        
-        /// <summary>
         /// CriterioTextBox control.
         /// </summary>
         /// <remarks>

@@ -49,6 +49,15 @@ namespace AplicadaIIprimerParcial.Registros {
         protected global::System.Web.UI.WebControls.Button BuscarButton;
         
         /// <summary>
+        /// DepoIdRFdValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator DepoIdRFdValidator;
+        
+        /// <summary>
         /// FechaTextBox control.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,24 @@ namespace AplicadaIIprimerParcial.Registros {
         protected global::System.Web.UI.WebControls.TextBox ConceptoTextBox;
         
         /// <summary>
+        /// ConceptoRFValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ConceptoRFValidator;
+        
+        /// <summary>
+        /// ConceptoREValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator ConceptoREValidator;
+        
+        /// <summary>
         /// MontoTextBox control.
         /// </summary>
         /// <remarks>
@@ -92,6 +119,24 @@ namespace AplicadaIIprimerParcial.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox MontoTextBox;
+        
+        /// <summary>
+        /// MontoRFValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator MontoRFValidator;
+        
+        /// <summary>
+        /// MontoREValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator MontoREValidator;
         
         /// <summary>
         /// NuevoBtton control.

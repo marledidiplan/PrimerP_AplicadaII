@@ -11,7 +11,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-info">
-        <a class="navbar-brand" href="Default.aspx">Inicio</a>
+        <a class="navbar-brand" href="/Default.aspx">Inicio</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
 
@@ -20,17 +20,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Registros
-                            </a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Registros</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="Registros\rCuentaBancaria.aspx">Registro Cuenta Bancaria</a>
-                        <a class="dropdown-item" href="Registros\rDeposito.aspx">Registro Deposito</a>
+                        <a class="dropdown-item" href="/Registros/rCuentaBancaria.aspx">Registro Cuenta Bancaria</a>
+                        <a class="dropdown-item" href="/Registros/rDeposito.aspx">Registro Deposito</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consultas</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Consulta Cuenta Bancaria</a>
+                        <a class="dropdown-item" href="/Consulta/cCuentasBancarias.aspx">Consulta Cuenta Bancaria</a>
                          <a class="dropdown-item" href="#">Consulta Deposito</a>
                     </div>
                 </li>

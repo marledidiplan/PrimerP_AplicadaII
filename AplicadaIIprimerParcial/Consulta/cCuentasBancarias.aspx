@@ -20,12 +20,12 @@
         </div>
 
         <div class="form-group col-md-2 <%--<%--col-sm-1--%> col-lg-1">
-            <asp:Label ID="Criterio" runat="server" Text="Criterio"></asp:Label>
+            <asp:Label for="CriterioTextBox" runat="server" Text="Criterio"></asp:Label>
             <asp:TextBox ID="CriterioTextBox" runat="server"></asp:TextBox>
         </div>
 
         <div class=" form-group col-md-12 ">
-            <asp:Button ID="BuscarBotton" runat="server" Text="Buscar" class="btn btn-danger btn" />
+            <asp:Button ID="BuscarBotton" runat="server" Text="Buscar" class="btn btn-danger btn" OnClick="BuscarBotton_Click" />
         </div>
 
         <div>
@@ -33,17 +33,14 @@
                 <AlternatingRowStyle BackColor="Gray" />
                 <Columns>
                     <asp:HyperLinkField ControlStyle-ForeColor="GrayText"
-                        DataNavigateUrlFields="CuentaId" 
+                        DataNavigateUrlFields="CuentaId"
                         DataNavigateUrlFormatString="\Registros\rCuentaBancaria.aspx?Id={0}"
                         Text="Editar">
-                        <ControlStyle ForeColor="GrayText"></ControlStyle>
+                        <ControlStyle ForeColor="Brown"></ControlStyle>
                     </asp:HyperLinkField>
 
-                    <asp:BoundField HeaderText="CuentaId" />
-                    <asp:BoundField HeaderText="Nombre" />
-
                 </Columns>
-                <HeaderStyle BackColor="Window" Font-Bold="true" ForeColor="Blue" />
+                <HeaderStyle BackColor="Window" Font-Bold="true" ForeColor="blue" />
                 <RowStyle BackColor="PaleGreen" />
             </asp:GridView>
         </div>

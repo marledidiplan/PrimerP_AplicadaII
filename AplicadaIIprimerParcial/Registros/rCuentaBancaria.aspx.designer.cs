@@ -49,6 +49,15 @@ namespace AplicadaIIprimerParcial.Registros {
         protected global::System.Web.UI.WebControls.Button BuscarButton;
         
         /// <summary>
+        /// IdRFdValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator IdRFdValidator;
+        
+        /// <summary>
         /// FechaTextBox control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,24 @@ namespace AplicadaIIprimerParcial.Registros {
         protected global::System.Web.UI.WebControls.TextBox NombreTextbox;
         
         /// <summary>
+        /// NombreRFValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator NombreRFValidator;
+        
+        /// <summary>
+        /// NombreREValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator NombreREValidator;
+        
+        /// <summary>
         /// BalanceTextBox control.
         /// </summary>
         /// <remarks>
@@ -74,6 +101,24 @@ namespace AplicadaIIprimerParcial.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox BalanceTextBox;
+        
+        /// <summary>
+        /// BalanceRFValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator BalanceRFValidator;
+        
+        /// <summary>
+        /// BalanceREValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator BalanceREValidator;
         
         /// <summary>
         /// NuevoBtton control.
