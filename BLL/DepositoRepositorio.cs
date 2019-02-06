@@ -51,11 +51,10 @@ namespace BLL
                  decimal desigualdad = deposi.Monto - DepAnt.Monto;
                  cuenta.Balance += desigualdad;
 
-
+                contexto = new Contexto();
                 contexto.Entry(deposi).State = EntityState.Modified;
                 contexto.SaveChanges();
                 paso = true;
-
             }
 
             catch (Exception)
