@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Consulta\cCuentasBancarias.aspx" />
+    <Content Include="Consulta\cDepositos.aspx" />
     <Content Include="content\toastr.css" />
     <Content Include="content\toastr.min.css" />
     <Content Include="Default.aspx" />
@@ -99,6 +100,13 @@
     </Compile>
     <Compile Include="Consulta\cCuentasBancarias.aspx.designer.cs">
       <DependentUpon>cCuentasBancarias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta\cDepositos.aspx.cs">
+      <DependentUpon>cDepositos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consulta\cDepositos.aspx.designer.cs">
+      <DependentUpon>cDepositos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

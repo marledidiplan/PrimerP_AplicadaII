@@ -31,31 +31,33 @@ namespace BLL
 
         public override bool Modificar(Depositos deposi)
         {
-            CuentasBancarias bancarias = new CuentasBancarias();
+           
+            RepositorioBase<CuentasBancarias> ct = new RepositorioBase<CuentasBancarias>();
             Contexto contexto = new Contexto();
             bool paso = false;
             try
             {
-                contexto.Entry(bancarias).State = EntityState.Modified;
-
-                Depositos dep = contexto.depositos.Find(deposi.DepositoId);
+               
+                Depositos DepAnt = contexto.depositos.Find(deposi.DepositoId);
                 var cuenta = contexto.cuentasBancarias.Find(deposi.CuentaId);
-                var cuentaAnt = contexto.cuentasBancarias.Find(dep.CuentaId);
+                var cuentaAnt = contexto.cuentasBancarias.Find(DepAnt.CuentaId);
 
-                if (deposi.CuentaId != dep.CuentaId)
+                if (deposi.CuentaId != DepAnt.CuentaId)
                 {
                     cuenta.Balance += deposi.Monto;
-                    cuentaAnt.Balance -= dep.Monto;
+                    cuentaAnt.Balance -= DepAnt.Monto;
+                    
                 }
-                else
-                {
-                    decimal diferencia = deposi.Monto - dep.Monto;
-                    cuenta.Balance += diferencia;
-                }
+                 decimal desigualdad = deposi.Monto - DepAnt.Monto;
+                 cuenta.Balance += desigualdad;
+
+
+                contexto.Entry(deposi).State = EntityState.Modified;
                 contexto.SaveChanges();
                 paso = true;
+
             }
-      
+
             catch (Exception)
             {
                 throw;
@@ -88,8 +90,6 @@ namespace BLL
         public override bool Eliminar(int id)
         {
             CuentasBancarias bancarias = new CuentasBancarias();
-            //Depositos deposi = new Depositos();
-
             bool paso = false;
             Contexto contexto = new Contexto();
             try

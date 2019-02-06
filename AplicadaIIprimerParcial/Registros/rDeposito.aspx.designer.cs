@@ -31,13 +31,13 @@ namespace AplicadaIIprimerParcial.Registros {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// DepositoTextBox control.
+        /// DepositoIdTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DepositoTextBox;
+        protected global::System.Web.UI.WebControls.TextBox DepositoIdTextBox;
         
         /// <summary>
         /// BuscarButton control.
@@ -139,30 +139,30 @@ namespace AplicadaIIprimerParcial.Registros {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator MontoREValidator;
         
         /// <summary>
-        /// NuevoBtton control.
+        /// NuevoButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button NuevoBtton;
+        protected global::System.Web.UI.WebControls.Button NuevoButton;
         
         /// <summary>
-        /// GuardarBtton control.
+        /// GuardarButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button GuardarBtton;
+        protected global::System.Web.UI.WebControls.Button GuardarButton;
         
         /// <summary>
-        /// EliminarBtton control.
+        /// EliminarButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EliminarBtton;
+        protected global::System.Web.UI.WebControls.Button EliminarButton;
     }
 }

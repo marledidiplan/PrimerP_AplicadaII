@@ -49,14 +49,18 @@ namespace AplicadaIIprimerParcial.Registros
             CuentasBancarias bancarias = new CuentasBancarias();
             RepositorioBase<CuentasBancarias> repo = new RepositorioBase<CuentasBancarias>();
 
-            bancarias= LlenaClase();
+            if (IsValid == false)
+            {
+                Util.ShowToastr(this.Page, " Campos Vacios", "Error", "Error");
+            }
+            bancarias = LlenaClase();
             if (CuentaIdTextBox != null)
                 paso = repo.Guardar(bancarias);
             else
                 paso = repo.Modificar(bancarias);
             if (paso)
             {
-                Response.Write("<script> alert('No se pudo Guardar')</script>");
+                Util.ShowToastr(this.Page, " No se pudo Guardar", "Error", "Error");
 
                 Clean();
 
@@ -64,7 +68,7 @@ namespace AplicadaIIprimerParcial.Registros
             }
             else
             {
-                Response.Write("<script> text('Guardado')</script>");
+                Util.ShowToastr(this.Page, " Guardado con EXITO", "Guardado", "Success");
             }
         }
 
@@ -75,13 +79,13 @@ namespace AplicadaIIprimerParcial.Registros
 
             if (repo.Eliminar(id))
             {
-                Response.Write("<script>text('Eliminado')</script>");
+                Util.ShowToastr(this.Page, " Eliminado con EXITO", "Eliminado", "Success");
                 Clean();
             }
             else
-            {
-                Response.Write("<script> alert('No existe')</script>");
-            }
+            
+                Util.ShowToastr(this.Page, " No se pudo eliminar", "Error", "Error");
+            
         }
 
         protected void BuscarButton_Click(object sender, EventArgs e)
@@ -95,10 +99,13 @@ namespace AplicadaIIprimerParcial.Registros
                 FechaTextBox.Text = bancarias.Fecha.ToString();
                 NombreTextbox.Text = bancarias.Nombre;
                BalanceTextBox.Text = bancarias.Balance.ToString();
+
+                Util.ShowToastr(this.Page, "Su busqueda fue exitosa", "EXITO", "Info");
             }
             else
             {
-                Response.Write("<script> alert('No existe')</script>");
+                Util.ShowToastr(this.Page, " No existe", "Error", "Error");
+                Clean();
             }
         }
     }

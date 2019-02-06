@@ -74,6 +74,14 @@
       <Project>{0D3AF76F-5239-4FD1-BA45-73EE91FA467B}</Project>
       <Name>AplicadaIIprimerParcial</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{18744DE4-FD5C-468E-8714-98902267E125}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{CB8F7190-F793-4166-B0D0-8754BFB1634C}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
