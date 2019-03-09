@@ -32,7 +32,7 @@
         </div>
 
         <div>
-            <asp:GridView ID="CuentasGridView" runat="server" class="table table-condensed table-bordered table-responsive" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <asp:GridView ID="PrestamoGridView" runat="server" class="table table-condensed table-bordered table-responsive" CellPadding="4" ForeColor="#333333" GridLines="None">
                 <AlternatingRowStyle BackColor="Gray" />
                 <Columns>
                     <asp:HyperLinkField ControlStyle-ForeColor="GrayText"

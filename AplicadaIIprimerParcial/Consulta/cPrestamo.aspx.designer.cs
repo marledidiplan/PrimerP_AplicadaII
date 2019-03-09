@@ -49,12 +49,12 @@ namespace AplicadaIIprimerParcial.Consulta {
         protected global::System.Web.UI.WebControls.Button BuscarBotton;
         
         /// <summary>
-        /// CuentasGridView control.
+        /// PrestamoGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView CuentasGridView;
+        protected global::System.Web.UI.WebControls.GridView PrestamoGridView;
     }
 }
