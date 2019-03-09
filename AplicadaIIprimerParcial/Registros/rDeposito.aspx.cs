@@ -35,7 +35,7 @@ namespace AplicadaIIprimerParcial.Registros
             depo.Concepto = ConceptoTextBox.Text;
             depo.CuentaId = Util.ToInt(CuentaDropDownList.SelectedValue);
             depo.Monto = Convert.ToDecimal(MontoTextBox.Text);
-
+           
             return depo;
         }
         private void LLenarComboBox()

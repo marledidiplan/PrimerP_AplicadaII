@@ -12,6 +12,7 @@ namespace DAL
     {
         public DbSet<CuentasBancarias> cuentasBancarias { get; set; }
         public DbSet<Depositos> depositos { get; set; }
+        public DbSet<Prestamos> prestamos { get; set; }
 
         public Contexto() : base("ConStr")
         {

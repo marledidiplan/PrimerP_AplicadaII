@@ -75,6 +75,7 @@
   <ItemGroup>
     <Content Include="Consulta\cCuentasBancarias.aspx" />
     <Content Include="Consulta\cDepositos.aspx" />
+    <Content Include="Consulta\cPrestamo.aspx" />
     <Content Include="content\toastr.css" />
     <Content Include="content\toastr.min.css" />
     <Content Include="Default.aspx" />
@@ -84,9 +85,11 @@
     <None Include="Scripts\jquery-1.6.3-vsdoc.js" />
     <Content Include="Registros\rDeposito.aspx" />
     <Content Include="Registros\rCuentaBancaria.aspx" />
+    <Content Include="Registros\rPrestamo.aspx" />
     <Content Include="Resources\banco-png.png" />
     <Content Include="Resources\cuenta-png.png" />
     <Content Include="Resources\pagobancari-png.png" />
+    <Content Include="Resources\prestamo.png" />
     <Content Include="Scripts\jquery-1.6.3.js" />
     <Content Include="Scripts\jquery-1.6.3.min.js" />
     <Content Include="Scripts\toastr.js" />
@@ -107,6 +110,13 @@
     </Compile>
     <Compile Include="Consulta\cDepositos.aspx.designer.cs">
       <DependentUpon>cDepositos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta\cPrestamo.aspx.cs">
+      <DependentUpon>cPrestamo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consulta\cPrestamo.aspx.designer.cs">
+      <DependentUpon>cPrestamo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -132,6 +142,13 @@
     </Compile>
     <Compile Include="Registros\rCuentaBancaria.aspx.designer.cs">
       <DependentUpon>rCuentaBancaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\rPrestamo.aspx.cs">
+      <DependentUpon>rPrestamo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\rPrestamo.aspx.designer.cs">
+      <DependentUpon>rPrestamo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
