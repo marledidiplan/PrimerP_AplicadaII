@@ -34,7 +34,7 @@ namespace AplicadaIIprimerParcial.Registros
             if (resul == true)
                 bancarias.Fecha = date;
             bancarias.Nombre = NombreTextbox.Text;
-            bancarias.Balance =Convert.ToInt32(BalanceTextBox.Text);
+            bancarias.Balance = Utilidades.Util.ToDecimal(BalanceTextBox.Text);
             return bancarias;
         }
 

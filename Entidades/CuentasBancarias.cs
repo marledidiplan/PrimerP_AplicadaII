@@ -15,8 +15,7 @@ namespace Entidades
         public DateTime Fecha { get; set; }
         public string Nombre { get; set; }
         public decimal Balance { get; set; }
-        public virtual List<Depositos> Detalle { get; set; }
-
+        public virtual List<Depositos> Details { get; set; }
         public CuentasBancarias()
         {
             CuentaId = 0;

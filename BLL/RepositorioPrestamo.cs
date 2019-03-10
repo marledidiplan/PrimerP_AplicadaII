@@ -15,16 +15,19 @@ namespace BLL
         {
             bool paso = false;
             Contexto contexto = new Contexto();
-            decimal total = 0;
+            decimal total=0;
             try
             {
                 foreach (var item in prestamo.Detalle)
                 {
-                    item.Capital += item.Interes;
+                    total = item.Capital += item.Interes;
                 }
-                contexto.cuentasBancarias.Find(prestamo.IdCuenta).Balance += total;
+                contexto.cuentasBancarias.Find(prestamo.CuentaId).Balance += total;
                 contexto.prestamos.Add(prestamo);
-                paso = contexto.SaveChanges() > 0;
+
+                if(contexto.SaveChanges()>0)
+                         paso = true;
+
             }
             catch (Exception)
             {
@@ -38,12 +41,12 @@ namespace BLL
             Contexto contexto = new Contexto();
             try
             {
-                var Ante = contexto.prestamos.Find(prestamo.IdCuenta);
+                var Ante = contexto.prestamos.Find(prestamo.CuentaId);
                 foreach (var item in Ante.Detalle)
                 {
                     if (!prestamo.Detalle.Exists(m => m.NCuota == item.NCuota))
                     {
-                        _contexto.Entry(item).State = EntityState.Deleted;
+                        contexto.Entry(item).State = EntityState.Deleted;
                     }
                 }
                 foreach (var item in prestamo.Detalle)
@@ -86,12 +89,12 @@ namespace BLL
             try
             {
                 prestamo = contexto.prestamos.Find(id);
-                var Ante = contexto.prestamos.Find(prestamo.IdCuenta);
+                var Ante = contexto.prestamos.Find(prestamo.CuentaId);
                 foreach (var item in Ante.Detalle)
                 {
                     if (!prestamo.Detalle.Exists(m => m.NCuota == item.NCuota))
                     {
-                        _contexto.Entry(item).State = EntityState.Deleted;
+                        contexto.Entry(item).State = EntityState.Deleted;
                     }
                     contexto.prestamos.Remove(prestamo);
                 }

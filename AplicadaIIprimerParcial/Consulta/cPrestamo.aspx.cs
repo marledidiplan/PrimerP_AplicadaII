@@ -1,4 +1,5 @@
-﻿using BLL;
+﻿using AplicadaIIprimerParcial.Utilidades;
+using BLL;
 using Entidades;
 using System;
 using System.Collections.Generic;
@@ -20,14 +21,34 @@ namespace AplicadaIIprimerParcial.Consulta
         protected void BuscarBotton_Click(object sender, EventArgs e)
         {
             Expression<Func<Prestamos, bool>> filtro = m => true;
-            RepositorioPrestamo<Prestamos> repositorio = new RepositorioPrestamo<Prestamos>();
+            RepositorioPrestamo repositorio = new RepositorioPrestamo();
 
-            int id;
-            decimal n;
+            int id = 0;
+            
             switch (FiltroDropDownList.SelectedIndex)
             {
-              
+                //Todo
+                case 0:
+                    filtro = d => true;
+                    break;
+                    //PrestamoId
+                case 1:
+                    Util.ToInt(CriterioTextBox.Text);
+                    filtro = d => d.PrestamoId == id;
+                    break;
+                case 2:
+                    filtro = d => d.Fecha.Equals(CriterioTextBox.Text);
+                    break;
+                case 3:
+                    id = Util.ToInt(CriterioTextBox.Text);
+                    filtro = d => (d.CuentaId == id);
+                    break;
+                
+                
             }
+            PrestamoGridView.DataSource = repositorio.GetList(filtro);
+            PrestamoGridView.DataBind();
+           
 
            
         }

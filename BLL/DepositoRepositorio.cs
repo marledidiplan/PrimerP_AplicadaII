@@ -71,9 +71,9 @@ namespace BLL
             try
             {
                 bancarias = _contexto.cuentasBancarias.Find(id);
-                bancarias.Detalle.Count();
+                bancarias.Details.Count();
 
-                foreach (var item in bancarias.Detalle)
+                foreach (var item in bancarias.Details)
                 {
                     string s = item.CuentasB.Nombre;
                 }
