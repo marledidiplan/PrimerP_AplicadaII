@@ -76,13 +76,13 @@ namespace AplicadaIIprimerParcial.Registros {
         protected global::System.Web.UI.WebControls.Label CuentaLabel;
         
         /// <summary>
-        /// CuentDropDownList control.
+        /// CuentaDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CuentDropDownList;
+        protected global::System.Web.UI.WebControls.DropDownList CuentaDropDownList;
         
         /// <summary>
         /// CapitalLabel control.
@@ -209,6 +209,24 @@ namespace AplicadaIIprimerParcial.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView DetalleGridView;
+        
+        /// <summary>
+        /// Label2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
+        /// MontoTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox MontoTextBox;
         
         /// <summary>
         /// NuevoButton control.

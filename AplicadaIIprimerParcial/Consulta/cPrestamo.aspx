@@ -30,7 +30,9 @@
         <div class=" form-group col-md-12 ">
             <asp:Button ID="BuscarBotton" runat="server" Text="Buscar" class="btn btn-success btn" OnClick="BuscarBotton_Click" />
         </div>
-
+        <div class=" form-group col-md-12 ">
+            <asp:Button ID="ImprimirButton" runat="server" Text="Imprimir" class="btn btn-warning btn" OnClick="ImprimirButton_Click" />
+        </div>
         <div>
             <asp:GridView ID="PrestamoGridView" runat="server" class="table table-condensed table-bordered table-responsive" CellPadding="4" ForeColor="#333333" GridLines="None">
                 <AlternatingRowStyle BackColor="Gray" />

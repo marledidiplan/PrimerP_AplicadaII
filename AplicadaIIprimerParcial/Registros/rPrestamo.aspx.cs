@@ -12,39 +12,49 @@ namespace AplicadaIIprimerParcial.Registros
 {
     public partial class rPrestamo : System.Web.UI.Page
     {
+        List<Cuotas> listDetalle = new List<Cuotas>();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            //CuentasBancarias bancarias = new CuentasBancarias();
-            LlenarCombo();
+            if (!Page.IsPostBack)
+            {
+                LlenarCombo();
+            }
+        }
 
+        public List<Cuotas> GetCuotas()
+        {
+            List<Cuotas> listDetalle = new List<Cuotas>();
+            listDetalle.Add(new Cuotas());
+            return listDetalle;
         }
 
         private Prestamos LlenaClase(Prestamos prestamo)
         {
-           
             prestamo = (Prestamos)ViewState["Prestamos"];
             prestamo.PrestamoId = Util.ToInt(IdPrestamoTextBox.Text);
             DateTime date;
             bool resul = DateTime.TryParse(FechaTextBox.Text, out date);
             if (resul == true)
                 prestamo.Fecha = date;
-            prestamo.CuentaId = Util.ToInt(CuentDropDownList.Text);           
+            prestamo.CuentaId = Util.ToIntObject(CuentaDropDownList.SelectedValue);
             prestamo.Capital = Util.ToDecimal(CapitalTextBox.Text);
             prestamo.InteresAnual = Util.ToDecimal(InteresTextBox.Text);
             prestamo.TiempoMeses = Util.ToInt(TiempoTextBox.Text);
-            prestamo.Detalle = (List<Cuotas>)ViewState["Cuotas"];
+            prestamo.MontoPrestamo = Util.ToInt(MontoTextBox.Text);
+            prestamo.Detalle = GetCuotas();
             return prestamo;
 
         }
         private void LlenarCombo()
         {
             RepositorioBase<CuentasBancarias> repositorio = new RepositorioBase<CuentasBancarias>();
-            CuentDropDownList.DataSource = repositorio.GetList(m => true);
-            CuentDropDownList.DataValueField = "CuentaId";
-            CuentDropDownList.DataValueField = "Nombre";
-            CuentDropDownList.DataBind();
+            CuentaDropDownList.DataSource = repositorio.GetList(m => true);
+            CuentaDropDownList.DataValueField = "CuentaId";
+            CuentaDropDownList.DataTextField = "Nombre";
+            CuentaDropDownList.DataBind();
+
             ViewState["Prestamos"] = new Prestamos();
-            this.BindGrid();
         }
 
         private void Clean()
@@ -54,6 +64,7 @@ namespace AplicadaIIprimerParcial.Registros
             InteresTextBox.Text = string.Empty;
             TiempoTextBox.Text = string.Empty;
             ViewState["Prestamos"] = new Prestamos();
+            //DetalleGridView.DataSource = null;
            
         }
         protected void NuevoButton_Click(object sender, EventArgs e)
@@ -65,11 +76,11 @@ namespace AplicadaIIprimerParcial.Registros
         {
             Clean();
             IdPrestamoTextBox.Text = prestamo.PrestamoId.ToString();
-            CuentDropDownList.Text = prestamo.CuentaId.ToString();
+            CuentaDropDownList.Text = prestamo.CuentaId.ToString();
             CapitalTextBox.Text = prestamo.Capital.ToString();
             InteresTextBox.Text = prestamo.InteresAnual.ToString();
             TiempoTextBox.Text = prestamo.TiempoMeses.ToString();
-
+            MontoTextBox.Text = prestamo.MontoPrestamo.ToString();
         }
         protected void BindGrid()
         {
@@ -148,50 +159,45 @@ namespace AplicadaIIprimerParcial.Registros
         protected void CacularButton_Click(object sender, EventArgs e)
         {
             Prestamos prestamo = new Prestamos();
-            Cuotas ctas = new Cuotas();
-            List<Cuotas> ListCuotas = new List<Cuotas>();
             decimal capital = Util.ToDecimal(CapitalTextBox.Text);
             decimal interes = Util.ToDecimal(InteresTextBox.Text) /100;
             int tiempoMeses = Util.ToInt(TiempoTextBox.Text);
+            DateTime fecha = Util.ToDate(FechaTextBox.Text).Date;
             decimal pagar;
-
+            decimal capitalmen = 0;
+            decimal interesmen = 0;
+            decimal montomen = 0;
+            decimal balancemen = 0;
+            decimal montopres = 0;
+            montopres = capital + (interes * capital);
             for (int i = 0; i < tiempoMeses; i++)
             {
-                ctas.Interes = interes * capital / tiempoMeses;
-                ctas.Capital = capital / tiempoMeses;
-                pagar = ctas.Interes * tiempoMeses + capital;
-                ctas.Monto = ctas.Interes + ctas.Capital;
+                interesmen = interes * capital / tiempoMeses;
+                capitalmen = capital / tiempoMeses;
+                pagar = interesmen * tiempoMeses + capital;
+                montomen = interesmen + capitalmen;
 
                 if (i == 0)
                 {
-                    ctas.Bce = pagar - (ctas.Interes + ctas.Capital);
+                    balancemen = pagar - (interesmen + capitalmen);
                 }
                 else
-                    ctas.Bce = ctas.Bce - (ctas.Interes + ctas.Capital);
+                    balancemen = balancemen - (interesmen + capitalmen);
 
                 if (i == 0)
                 {
-                    ListCuotas.Add(new Cuotas( 0, Util.ToInt(IdPrestamoTextBox.Text), ctas.Fecha, ctas.Interes, ctas.Capital, ctas.Bce, ctas.Monto));
+                    prestamo.AgregarDetalle(0, i+1, prestamo.PrestamoId, fecha, interesmen, capitalmen, balancemen, montomen);
                 }
                 else
                 {
-                    ListCuotas.Add(new Cuotas( 0, Util.ToInt(IdPrestamoTextBox.Text), ctas.Fecha.AddMonths(i), ctas.Interes, ctas.Capital, ctas.Bce, ctas.Monto));
+                    prestamo.AgregarDetalle(0, i+1, prestamo.PrestamoId, fecha.AddMonths(i), interesmen, capitalmen, balancemen, montomen);
                 }
-
-
 
             }
-            ViewState["Cuotas"] = ListCuotas;
-            DetalleGridView.DataSource = ViewState["Cuotas"];
-            DetalleGridView.DataBind();
-
+            ViewState["Prestamos"] = prestamo;
+            BindGrid();
+            MontoTextBox.Text = montopres.ToString();
         }
 
-        //public List<Cuotas> CalcularValores()
-        //{
-          
-        //    return ListCuotas;
-
-        //}
     }
 }

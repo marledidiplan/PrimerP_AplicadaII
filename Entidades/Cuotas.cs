@@ -12,21 +12,23 @@ namespace Entidades
     public class Cuotas
     {
         [Key]
-        public int NCuota { get; set; }
         public int Id { get; set; }
+        public int NCuota { get; set; }
+        public int PrestamoId { get; set; }
         public DateTime Fecha { get; set; }
         public decimal Interes { get; set; }
         public decimal Capital { get; set; }
         public decimal Bce { get; set; }
         public decimal Monto { get; set; }
 
-        [ForeignKey("Id")]
+        [ForeignKey("PrestamoId")]
         public virtual Prestamos Prestamo { get; set; }
 
         public Cuotas()
         {
-            NCuota = 0;
             Id = 0;
+            PrestamoId = 0;
+            NCuota = 0;          
             Fecha = DateTime.Now;
             Interes = 0;
             Capital = 0;
@@ -35,11 +37,11 @@ namespace Entidades
 
         }
 
-        public Cuotas( int nCuota, int id, DateTime fecha, decimal interes, decimal capital, decimal bce,decimal monto)
+        public Cuotas(int id, int nCuota, int prestamoId, DateTime fecha, decimal interes, decimal capital, decimal bce,decimal monto)
         {
-
-            this.NCuota = nCuota;
             this.Id = id;
+            this.NCuota = nCuota;
+            this.PrestamoId = prestamoId;
             this.Fecha = fecha;
             this.Interes = interes;
             this.Capital = capital;

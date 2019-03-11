@@ -15,6 +15,13 @@ namespace AplicadaIIprimerParcial.Utilidades
 
             return retorno;
         }
+        public static int ToIntObject(object valor)
+        {
+            int retorno = 0;
+            int.TryParse(valor.ToString(), out retorno);
+
+            return retorno;
+        }
         public static DateTime ToDate(string valor)
         {
             DateTime retorno = DateTime.Now;

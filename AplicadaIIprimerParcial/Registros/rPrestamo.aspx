@@ -33,7 +33,7 @@
                 <div class="form-gruop col-md-12">
                     <asp:Label ID="CuentaLabel" runat="server" Text="Cuenta"></asp:Label>
                     <div class="col-md-8">
-                        <asp:DropDownList ID="CuentDropDownList" runat="server" class="form-control input-sm"></asp:DropDownList>
+                        <asp:DropDownList class="form-control" ID="CuentaDropDownList" runat="server" Width="200px"></asp:DropDownList>
                         <br />
                     </div>
                 </div>
@@ -70,12 +70,23 @@
                 </div>
 
 
-                <asp:GridView ID="DetalleGridView" class="table table-condensed table-bordered table-responsive" runat="server" CellPadding="4" ForeColor="Teal" GridLines="None">
-                    <AlternatingRowStyle BorderColor="White" />
-                    
-                    <HeaderStyle BackColor="Window" Font-Bold="true" />
-                </asp:GridView>
-
+                <asp:GridView ID="DetalleGridView" runat="server" class="table table-condensed table-bordered table-responsive" AutoGenerateColumns="False" CellPadding="4" ForeColor="Black" GridLines="None" BackColor="White">
+                            <AlternatingRowStyle BackColor="#999999" />
+                            <Columns>
+                                <asp:BoundField DataField="NCuota" HeaderText="Cuota" />
+                                <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
+                                <asp:BoundField DataField="Interes" HeaderText="Interes" />
+                                <asp:BoundField DataField="Capital" HeaderText="Capital" />
+                                <asp:BoundField DataField="Bce" HeaderText="Balance" />
+                            </Columns>
+                            <HeaderStyle BackColor="#999999" Font-Bold="True" />
+                        </asp:GridView>
+                <div class="form-gruop col-md-12">
+                    <asp:Label ID="Label2" runat="server" Text="Monto del Prestamo"></asp:Label>
+                    <div class="col-md-8">
+                        <asp:TextBox ID="MontoTextBox" runat="server" class="form-control input-sm" ReadOnly="True"></asp:TextBox>
+                    </div>
+                </div>
                 <br />
                 <%--  <Botones>--%>
                 <div class="panel">

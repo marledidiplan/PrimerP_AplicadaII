@@ -52,5 +52,10 @@ namespace AplicadaIIprimerParcial.Consulta
 
            
         }
+
+        protected void ImprimirButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Reportes/ReportePrestamos.aspx");
+        }
     }
 }
