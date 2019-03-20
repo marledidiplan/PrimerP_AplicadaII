@@ -13,7 +13,6 @@ namespace Entidades
     {
         [Key]
         public int Id { get; set; }
-        public int NCuota { get; set; }
         public int PrestamoId { get; set; }
         public DateTime Fecha { get; set; }
         public decimal Interes { get; set; }
@@ -28,7 +27,7 @@ namespace Entidades
         {
             Id = 0;
             PrestamoId = 0;
-            NCuota = 0;          
+        
             Fecha = DateTime.Now;
             Interes = 0;
             Capital = 0;
@@ -37,10 +36,10 @@ namespace Entidades
 
         }
 
-        public Cuotas(int id, int nCuota, int prestamoId, DateTime fecha, decimal interes, decimal capital, decimal bce,decimal monto)
+        public Cuotas(int id,  int prestamoId, DateTime fecha, decimal interes, decimal capital, decimal bce,decimal monto)
         {
             this.Id = id;
-            this.NCuota = nCuota;
+          
             this.PrestamoId = prestamoId;
             this.Fecha = fecha;
             this.Interes = interes;

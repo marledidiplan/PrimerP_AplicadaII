@@ -20,9 +20,6 @@ namespace Entidades
         public int TiempoMeses { get; set; }
         public int MontoPrestamo { get; set; }
 
-        [ForeignKey("CuentaId")]
-        public virtual CuentasBancarias CuentasBancarias { get; set; }
-
         public virtual List<Cuotas> Detalle { get; set; }
 
         public Prestamos()
@@ -38,9 +35,9 @@ namespace Entidades
 
         }
 
-        public void AgregarDetalle(int id, int nCuota, int prestamoId, DateTime fecha, decimal interes, decimal capital, decimal bce, decimal monto)
+        public void AgregarDetalle(int id, int prestamoId, DateTime fecha, decimal interes, decimal capital, decimal bce, decimal monto)
         {
-            this.Detalle.Add(new Cuotas(id, nCuota, prestamoId, fecha, interes, capital, bce, monto));
+            this.Detalle.Add(new Cuotas(id,  prestamoId, fecha, interes, capital, bce, monto));
         }
 
     }

@@ -41,21 +41,40 @@ namespace BLL
             Contexto contexto = new Contexto();
             try
             {
-                var Ante = contexto.prestamos.Find(prestamo.CuentaId);
-                foreach (var item in Ante.Detalle)
+                //decimal monto = 0;
+                //decimal anteMonto = 0;
+                var Ante = contexto.cuotas.Where(m => m.PrestamoId == prestamo.PrestamoId).AsNoTracking().ToList();
+                //foreach (var item in Ante)
+                //{
+                //    anteMonto += item.Monto;
+
+                //}
+                //contexto.cuentasBancarias.Find(prestamo.CuentaId).Balance -= anteMonto;
+                //foreach (var item in prestamo.Detalle)
+                //{
+                //    monto += item.Monto;
+                //}
+                //contexto.cuentasBancarias.Find(prestamo.CuentaId).Balance += monto;
+               
+                foreach (var item in Ante)
                 {
-                    if (!prestamo.Detalle.Exists(m => m.NCuota == item.NCuota))
-                    {
+                   if(!prestamo.Detalle.Exists(m => m.Id.Equals(item.Id)))
+                   {
                         contexto.Entry(item).State = EntityState.Deleted;
-                    }
+                   }
+                        
                 }
                 foreach (var item in prestamo.Detalle)
                 {
-                    var estado = item.Id > 0 ? EntityState.Modified : EntityState.Added;
-                    contexto.Entry(item).State = estado;
+                    contexto.Entry(item).State = item.Id == 0 ? EntityState.Added : EntityState.Modified;
                 }
                 contexto.Entry(prestamo).State = EntityState.Modified;
-                paso = contexto.SaveChanges() > 0;
+
+                if(contexto.SaveChanges() > 0)
+                {
+                    paso = true;
+                }
+                contexto.Dispose();
             }
             catch (Exception)
             {
@@ -92,7 +111,7 @@ namespace BLL
                 var Ante = contexto.prestamos.Find(prestamo.CuentaId);
                 foreach (var item in Ante.Detalle)
                 {
-                    if (!prestamo.Detalle.Exists(m => m.NCuota == item.NCuota))
+                    if (!prestamo.Detalle.Exists(m => m.Id == item.Id))
                     {
                         contexto.Entry(item).State = EntityState.Deleted;
                     }

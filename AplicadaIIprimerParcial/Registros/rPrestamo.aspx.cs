@@ -81,6 +81,9 @@ namespace AplicadaIIprimerParcial.Registros
             InteresTextBox.Text = prestamo.InteresAnual.ToString();
             TiempoTextBox.Text = prestamo.TiempoMeses.ToString();
             MontoTextBox.Text = prestamo.MontoPrestamo.ToString();
+            CuentaDropDownList.DataSource = prestamo.Detalle;
+
+            //this.BindGrid();
         }
         protected void BindGrid()
         {
@@ -145,7 +148,7 @@ namespace AplicadaIIprimerParcial.Registros
 
             if (prest != null)
             {
-                Clean();
+                //Clean();
                 LlenarCampos(prest);
                   Util.ShowToastr(this.Page, "Su busqueda fue exitosa", "EXITO", "Info");
             }
@@ -186,11 +189,11 @@ namespace AplicadaIIprimerParcial.Registros
 
                 if (i == 0)
                 {
-                    prestamo.AgregarDetalle(0, i+1, prestamo.PrestamoId, fecha, interesmen, capitalmen, balancemen, montomen);
+                    prestamo.AgregarDetalle(0, prestamo.PrestamoId, fecha, interesmen, capitalmen, balancemen, montomen);
                 }
                 else
                 {
-                    prestamo.AgregarDetalle(0, i+1, prestamo.PrestamoId, fecha.AddMonths(i), interesmen, capitalmen, balancemen, montomen);
+                    prestamo.AgregarDetalle(0,  prestamo.PrestamoId, fecha.AddMonths(i), interesmen, capitalmen, balancemen, montomen);
                 }
 
             }

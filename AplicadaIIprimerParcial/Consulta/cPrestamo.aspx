@@ -14,7 +14,6 @@
             <asp:DropDownList ID="FiltroDropDownList" CssClass="form-control" runat="server">
                 <asp:ListItem>TODO</asp:ListItem>
                 <asp:ListItem>Id</asp:ListItem>
-                <asp:ListItem> Ncuotas</asp:ListItem>
                 <asp:ListItem>Fecha</asp:ListItem>
                 <asp:ListItem>Ineteres</asp:ListItem>
                 <asp:ListItem>Capital</asp:ListItem>

@@ -117,6 +117,8 @@
     <Content Include="PrestamosDataSet.xss">
       <DependentUpon>PrestamosDataSet.xsd</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\WebBanco - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\WebBanco - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.6.3-vsdoc.js" />
     <Content Include="Registros\rDeposito.aspx" />
     <Content Include="Registros\rCuentaBancaria.aspx" />
@@ -246,7 +248,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Reportes\ListadoPrestamos.rdlc" />
+    <Content Include="Reportes\ListadoPrestamos.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

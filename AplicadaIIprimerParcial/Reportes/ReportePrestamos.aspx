@@ -1,15 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ReportePrestamos.aspx.cs" Inherits="AplicadaIIprimerParcial.Reportes.ReportePrestamos" %>
+﻿<%@ Page Language="C#"   MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ReportePrestamos.aspx.cs" Inherits="AplicadaIIprimerParcial.Reportes.ReportePrestamos" %>
 
 <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
         <div>
              <%--ScriptManager--%>
             <asp:ScriptManager runat="server"></asp:ScriptManager> 
@@ -20,6 +14,6 @@
                 <ServerReport ReportPath="" ReportServerUrl="" />
             </rsweb:ReportViewer>
         </div>
-    </form>
-</body>
-</html>
+
+</asp:Content>
+

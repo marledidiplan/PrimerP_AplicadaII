@@ -71,15 +71,15 @@
 
 
                 <asp:GridView ID="DetalleGridView" runat="server" class="table table-condensed table-bordered table-responsive" AutoGenerateColumns="False" CellPadding="4" ForeColor="Black" GridLines="None" BackColor="White">
-                            <AlternatingRowStyle BackColor="#999999" />
+                            <AlternatingRowStyle BackColor="Silver" />
                             <Columns>
-                                <asp:BoundField DataField="NCuota" HeaderText="Cuota" />
+                                <asp:BoundField DataField="Id" HeaderText="Cuota" />
                                 <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
                                 <asp:BoundField DataField="Interes" HeaderText="Interes" />
                                 <asp:BoundField DataField="Capital" HeaderText="Capital" />
                                 <asp:BoundField DataField="Bce" HeaderText="Balance" />
                             </Columns>
-                            <HeaderStyle BackColor="#999999" Font-Bold="True" />
+                            <HeaderStyle BackColor="SkyBlue" Font-Bold="True" />
                         </asp:GridView>
                 <div class="form-gruop col-md-12">
                     <asp:Label ID="Label2" runat="server" Text="Monto del Prestamo"></asp:Label>
