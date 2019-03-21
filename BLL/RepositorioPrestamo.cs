@@ -15,7 +15,7 @@ namespace BLL
         {
             bool paso = false;
             Contexto contexto = new Contexto();
-            decimal total=0;
+            decimal total = 0;
             try
             {
                 foreach (var item in prestamo.Detalle)
@@ -25,8 +25,8 @@ namespace BLL
                 contexto.cuentasBancarias.Find(prestamo.CuentaId).Balance += total;
                 contexto.prestamos.Add(prestamo);
 
-                if(contexto.SaveChanges()>0)
-                         paso = true;
+                if (contexto.SaveChanges() > 0)
+                    paso = true;
 
             }
             catch (Exception)
@@ -55,14 +55,14 @@ namespace BLL
                 //    monto += item.Monto;
                 //}
                 //contexto.cuentasBancarias.Find(prestamo.CuentaId).Balance += monto;
-               
+
                 foreach (var item in Ante)
                 {
-                   if(!prestamo.Detalle.Exists(m => m.Id.Equals(item.Id)))
-                   {
+                    if (!prestamo.Detalle.Exists(m => m.Id.Equals(item.Id)))
+                    {
                         contexto.Entry(item).State = EntityState.Deleted;
-                   }
-                        
+                    }
+
                 }
                 foreach (var item in prestamo.Detalle)
                 {
@@ -70,7 +70,7 @@ namespace BLL
                 }
                 contexto.Entry(prestamo).State = EntityState.Modified;
 
-                if(contexto.SaveChanges() > 0)
+                if (contexto.SaveChanges() > 0)
                 {
                     paso = true;
                 }
@@ -84,20 +84,32 @@ namespace BLL
         }
         public override Prestamos Buscar(int id)
         {
-            Contexto contexto = new Contexto();
-            Prestamos prestamos = new Prestamos();
-
+            Prestamos Cuotas = new Prestamos();
             try
             {
-                prestamos = contexto.prestamos.Find(id);
-                prestamos.Detalle.Count();
+                Cuotas = _contexto.prestamos.Find(id);
+                if (Cuotas != null)
+                {
+                    Cuotas.Detalle.Count();
+                    foreach (var item in Cuotas.Detalle)
+                    {
+                        //int a = item.NumCuotas;
+                        //int b = item.ID;
+                        //DateTime c = item.Fecha;
+                        //decimal d = item.Interes;
+                        //decimal e = item.Capital;
+                        //decimal f = item.BCE;
+                    }
+                }
+                _contexto.Dispose();
+
             }
-            catch
+            catch (Exception)
             {
+
                 throw;
             }
-            return prestamos;
-            
+            return Cuotas;
         }
 
         public override bool Eliminar(int id)

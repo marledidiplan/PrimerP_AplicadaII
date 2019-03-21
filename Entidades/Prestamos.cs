@@ -18,7 +18,7 @@ namespace Entidades
         public decimal Capital { get; set; }
         public decimal InteresAnual { get; set; }
         public int TiempoMeses { get; set; }
-        public int MontoPrestamo { get; set; }
+        public decimal MontoPrestamo { get; set; }
 
         public virtual List<Cuotas> Detalle { get; set; }
 
